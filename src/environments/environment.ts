@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  baseUrl: "http://localhost:8000",
-  production: false
+  baseUrl: "https://nodejs-authtest.herokuapp.com",
+  production: true
 };
 
 /*
