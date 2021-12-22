@@ -1,0 +1,22 @@
+<mat-toolbar class="toolbarNav" fxLayoutGap="40px" fxLayoutAlign.lg="end center " fxLayoutAlign.sm="end center"
+    fxLayoutAlign.gt-sm="end center" fxLayoutAlign.md="end center">
+
+    <!-- <mat-list-item (click)="onTabClick({link:'/home'})" mat-button>     <mat-icon class="material-icons color_blue" >
+            home</mat-icon> </mat-list-item> -->
+    <a (click)="onTabClick({link:'/home'})" mat-button routerLinkActive='active'>
+        <mat-icon class="material-icons color_blue">
+            home</mat-icon>
+    </a>
+    <a (click)="onTabClick({link:'/register'})" mat-button>
+        <mat-icon class="material-icons color_blue">perm_identity
+        </mat-icon>
+    </a>
+    <a (click)="onTabClick({link:'/register'})" mat-button>
+        <mat-icon class="material-icons color_blue">history</mat-icon>
+    </a>
+    <button mat-button [matMenuTriggerFor]="menu" *ngIf="isLoggedIn"><mat-icon class="material-icons color_blue">more_vert</mat-icon></button>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onTabClick({link:'/profile'})">Profile</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+</mat-toolbar>

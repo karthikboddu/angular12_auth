@@ -1,0 +1,14 @@
+<mat-card >
+
+    <mat-nav-list *ngIf="files">
+	<button mat-icon-button  (click) ="generate(urlDiff)">Download Build</button><mat-spinner *ngIf="downloadProgress"></mat-spinner>
+
+      <mat-list-item *ngFor="let eachfile of files">
+         <a matLine >{{ eachfile.new.path}}</a>
+         <button mat-icon-button > {{eachfile.status}}
+            <mat-icon>info</mat-icon>
+         </button>
+      </mat-list-item>
+    </mat-nav-list>
+    
+</mat-card>

@@ -1,0 +1,43 @@
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <!-- <ng-container matColumnDef="userId">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+    </ng-container> -->
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="device" >
+      <th mat-header-cell *matHeaderCellDef> Device </th>
+      <td mat-cell *matCellDef="let element" style="width: 200px;word-wrap: break-word;background-color:aqua"> {{element.device}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="loggedinAt">
+      <th mat-header-cell *matHeaderCellDef> LoggedIn AT </th>
+      <td mat-cell *matCellDef="let element" style="width: 200px;word-wrap: break-word;"> {{element.loggedinAt}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="loggedoutAt">
+      <th mat-header-cell *matHeaderCellDef> LoggedOut AT  </th>
+      <td mat-cell *matCellDef="let element" style="width: 200px;word-wrap: break-word;"> {{element.loggedoutAt}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ipAddress">
+        <th mat-header-cell *matHeaderCellDef> Ip Address  </th>
+        <td mat-cell *matCellDef="let element" style="width: 200px;word-wrap: break-word;"> {{element.ipAddress}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="islogout" >
+        <th mat-header-cell *matHeaderCellDef> Is Logged out  </th>
+        <td mat-cell *matCellDef="let element"> {{element.islogout}} </td>
+      </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

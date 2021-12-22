@@ -1,0 +1,22 @@
+<!-- <div class="content container " fxLayoutAlign="space-around center" >
+    <div fxLayout="row wrap "   fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]">
+        <mat-card class="mat-elevation-z4 " >
+          <img mat-card-image src="http://127hack.com/assets/images/office-desk.png">
+        </mat-card>
+      </div>
+    </div>
+    </div> -->
+
+    <app-header-items></app-header-items>
+    <div class="centering-div" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="25px"  [style.margin-top]="'52px'">
+      <mat-card class="mat-elevation-z4 " *ngFor="let member of members" fxFlex="calc(11%-30px)" fxFlex.sm="calc(50%-25px)" >
+          <img mat-card-image [src]="member.url" alt="Photo of {{member.title}}"  (click)="onTabClick({link:'/'+member.link})">
+          <mat-card-content>
+            <p>
+              {{member.content}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      

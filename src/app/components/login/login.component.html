@@ -1,0 +1,32 @@
+<!-- <app-header></app-header> -->
+<div fxLayoutAlign="center center" >
+    <mat-card fxFlex="25">
+        <mat-progress-bar
+          [mode]="'indeterminate'"  *ngIf="loginInvalid">
+    </mat-progress-bar>
+        <mat-card-title>Login</mat-card-title>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column">
+            <mat-error *ngIf="loginInvalid">
+                The username and password were not recognized
+              </mat-error>              
+            <mat-form-field >
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="Username" formControlName="username" required>
+              <mat-error>
+                Please provide a valid username
+              </mat-error>              
+            </mat-form-field>
+          
+            <mat-form-field >
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Password" formControlName="password" required>
+                <mat-error>
+                    Please provide a valid password
+                  </mat-error>                
+              </mat-form-field>
+              <button mat-raised-button >Login</button>
+          </form>
+          
+    </mat-card>
+
+</div>
