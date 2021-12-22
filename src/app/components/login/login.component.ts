@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
       try {
         const username = this.form.get('username')?.value;
         const password = this.form.get('password')?.value;
-        //this.aesService.encryptUsingAES256(password)
-         this.authService.login(username, password).subscribe(res=>{
+        
+         this.authService.login(username, this.aesService.encryptUsingAES256(password)).subscribe(res=>{
           console.log(res);
           if(res){
             this.router.navigate([this.returnUrl]);

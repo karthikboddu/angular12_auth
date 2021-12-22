@@ -70,9 +70,9 @@ export class RegisterComponent implements OnInit {
           
           const username = myLoginform.value.username;
           const password = myLoginform.value.password;
-         
+//         this.aesService.encryptUsingAES256(password)
           
-           this.authService.login(username, this.aesService.encryptUsingAES256(password)).subscribe(res=>{
+           this.authService.login(username, password).subscribe(res=>{
              console.log(res);
             if(res.status){
               localStorage.setItem('userToken', res.accessToken);
